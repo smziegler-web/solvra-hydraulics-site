@@ -1,102 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Solvra Hydraulics — Oil & Gas Pipeline Modeling. Coming soon." />
-  <title>Solvra Hydraulics — Coming Soon</title>
-  <style>
-    :root {
-      --bg: #18232D;
-      --panel: #202E39;
-      --text: #E7EEF3;
-      --muted: #A9B8C3;
-      --accent: #2C86C7;
-      --accent-bright: #4AA3DF;
-      --border: #364B5A;
-    }
-    * { box-sizing: border-box; }
-    html, body { margin: 0; min-height: 100%; }
-    body {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-      background:
-        radial-gradient(circle at 50% 30%, rgba(44,134,199,.16), transparent 38%),
-        linear-gradient(180deg, #18232D 0%, #121B23 100%);
-      color: var(--text);
-      font-family: "Segoe UI", Arial, sans-serif;
-    }
-    main {
-      width: min(760px, 100%);
-      text-align: center;
-      padding: 64px 32px;
-    }
-    .mark {
-      width: 72px;
-      height: 72px;
-      margin: 0 auto 24px;
-      border: 2px solid var(--accent-bright);
-      border-radius: 20px;
-      display: grid;
-      place-items: center;
-      color: var(--accent-bright);
-      font-size: 38px;
-      font-weight: 700;
-      letter-spacing: -4px;
-      box-shadow: 0 0 32px rgba(74,163,223,.18);
-    }
-    h1 {
-      margin: 0;
-      font-size: clamp(2.5rem, 8vw, 5rem);
-      line-height: .95;
-      letter-spacing: .08em;
-      font-weight: 700;
-    }
-    .hydraulics {
-      margin-top: 10px;
-      color: var(--accent-bright);
-      font-size: clamp(1rem, 3vw, 1.45rem);
-      letter-spacing: .34em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-    .tagline {
-      margin: 32px auto 0;
-      color: var(--muted);
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      letter-spacing: .03em;
-    }
-    .coming {
-      display: inline-block;
-      margin-top: 42px;
-      padding: 11px 18px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--text);
-      background: rgba(32,46,57,.62);
-      font-size: .95rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-    footer {
-      position: fixed;
-      left: 0; right: 0; bottom: 18px;
-      text-align: center;
-      color: #748694;
-      font-size: .8rem;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Solvra Hydraulics — Gas &amp; Liquid Network Modeling. Map-based Windows software for understanding pressure, flow, and network scenarios. Coming in 2027.">
+  <meta name="theme-color" content="#10202D">
+  <title>Solvra Hydraulics — Gas &amp; Liquid Network Modeling</title>
+  <link rel="icon" href="favicon.ico" sizes="16x16 24x24 32x32 48x48 64x64 128x128 256x256">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main>
-    <div class="mark" aria-hidden="true">S</div>
-    <h1>SOLVRA</h1>
-    <div class="hydraulics">Hydraulics</div>
-    <p class="tagline">Oil &amp; Gas Pipeline Modeling</p>
-    <div class="coming">Coming Soon</div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#main" aria-label="Solvra Hydraulics home">
+        <img src="assets/solvra-icon.png" width="44" height="44" alt="">
+        <span class="brand-type"><span class="brand-name">SOLVRA</span><span class="brand-subtitle">HYDRAULICS</span></span>
+      </a>
+      <nav aria-label="Main navigation"><a href="#overview">Overview</a><a href="#development">Development</a></nav>
+      <span class="status"><span class="status-dot" aria-hidden="true"></span>Coming in 2027</span>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-map" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <p class="eyebrow">A new view of network modeling</p>
+          <div class="hero-brand">
+            <img src="assets/solvra-icon.png" width="112" height="112" alt="" fetchpriority="high">
+            <div><h1 id="hero-title" class="wordmark">SOLVRA</h1><p class="hero-hydraulics">HYDRAULICS</p></div>
+          </div>
+          <p class="descriptor">Gas &amp; Liquid Network Modeling</p>
+          <div class="blue-rule" aria-hidden="true"></div>
+          <h2 class="hero-heading">Build on the map.<br>Understand the flow.</h2>
+          <p class="hero-summary">Bring your network into focus. Explore scenarios and understand pressure and flow in a modern Windows workspace.</p>
+          <div class="hero-actions"><a class="button" href="#overview">Explore Solvra <span aria-hidden="true">&rarr;</span></a><span class="platform">Built for Windows</span></div>
+        </div>
+      </div>
+      <div class="hero-bottom container"><span>Geography. Engineering. Clarity.</span><span>Illustrative network map</span></div>
+    </section>
+    <section class="overview container" id="overview" aria-labelledby="overview-title">
+      <div class="section-intro">
+        <div><p class="eyebrow">From geography to hydraulics</p><h2 id="overview-title">A clearer view of your network.</h2></div>
+        <p>One place to build a model, compare the possibilities, and make sense of the results.</p>
+      </div>
+      <div class="capabilities">
+        <article><span class="step">01 <span aria-hidden="true">/</span> MODEL</span><h3>Start with the map.</h3><p>Build networks in geographic context, with GIS and shapefile import to bring your network into the workspace.</p><span class="detail">Map-based network modeling</span></article>
+        <article><span class="step">02 <span aria-hidden="true">/</span> COMPARE</span><h3>Explore the possibilities.</h3><p>Organize cases and scenarios to explore operating conditions across gas and liquid networks.</p><span class="detail">Multiple cases and scenarios</span></article>
+        <article><span class="step">03 <span aria-hidden="true">/</span> UNDERSTAND</span><h3>See what the numbers mean.</h3><p>Connect steady-state hydraulic calculations with visual pressure and flow results across the network.</p><span class="detail">Visual pressure and flow results</span></article>
+      </div>
+    </section>
+    <section class="development" id="development" aria-labelledby="development-title">
+      <div class="container development-inner">
+        <div><p class="eyebrow">Solvra Hydraulics</p><h2 id="development-title">Engineering, with a wider view.</h2><p>Currently in development. More product details and demonstrations will be shared as Solvra moves toward release.</p></div>
+        <div class="development-status"><span class="status-dot" aria-hidden="true"></span><span>Coming in 2027<small>Windows desktop application</small></span></div>
+      </div>
+    </section>
   </main>
-  <footer>&copy; 2026 Solvra Hydraulics</footer>
+  <footer class="site-footer container"><p>&copy; 2026 Solvra Hydraulics LLC</p><p>Gas &amp; Liquid Network Modeling</p><a href="#main">Back to top <span aria-hidden="true">&uarr;</span></a></footer>
 </body>
 </html>
