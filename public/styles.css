@@ -128,6 +128,17 @@ main:focus { outline: none; }
 .product-section .section-number { margin-bottom: 15px; }
 .product-section p { font-size: 16px; }
 .product-section .section-lead { font-size: 19px; }
+.engineering-section { border-top-color: #C6D7E3; }
+.engineering-section > .section-number { display: flex; align-items: center; gap: 12px; }
+.engineering-section > .section-number::before { content: ""; width: 24px; height: 2px; background: var(--blue); flex-shrink: 0; }
+.engineering-details { margin: 28px 0; border-block: 1px solid var(--steel); }
+.engineering-details > div { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 24px; padding: 18px 20px; background: var(--paper); border-bottom: 1px solid var(--steel); }
+.engineering-details > div:nth-child(even) { background: white; }
+.engineering-details > div:last-child { border-bottom: 0; }
+.engineering-details dt { color: var(--slate); font-size: 15px; font-weight: 600; line-height: 1.7; }
+.engineering-details dd { color: var(--muted); font-size: 15px; line-height: 1.8; margin: 0; }
+.engineering-section .study-list article { padding: 18px 20px; background: var(--paper); }
+.engineering-section .study-list article:nth-child(even) { background: white; }
 .capability-panel, .import-panel { background: var(--paper); border: 1px solid var(--steel); border-radius: 6px; padding: 28px; margin-top: 30px; }
 .capability-panel h3, .import-panel h3 { font-size: 19px; margin-bottom: 18px; }
 .feature-list { display: grid; grid-template-columns: 1fr 1fr; gap: 15px 30px; padding-left: 19px; margin-bottom: 0; color: var(--slate); font-size: 14px; line-height: 1.7; }
@@ -306,6 +317,9 @@ main:focus { outline: none; }
   .product-section { padding-block: 31px; }
   .product-section h2 { font-size: 28px; }
   .product-section .section-lead { font-size: 18px; }
+  .engineering-details > div { grid-template-columns: 1fr; gap: 7px; padding: 17px 18px; }
+  .engineering-details dt, .engineering-details dd { font-size: 15px; }
+  .engineering-section .study-list article { padding: 17px 18px; }
   .capability-panel, .import-panel { padding: 22px; }
   .feature-list { grid-template-columns: 1fr; gap: 13px; font-size: 15px; }
   .study-list article { grid-template-columns: 1fr; gap: 10px; }
