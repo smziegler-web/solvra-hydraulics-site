@@ -108,7 +108,14 @@ def check():
         assert "subject to readiness and validation" in footer.text()
         assert not any(doc.find(tag) for tag in ("form", "iframe", "video", "input", "button")), "No unready interaction workflows"
         for image in doc.find("img"):
-            assert image.attrs.get("src") == "/assets/solvra-icon.png", "Only the approved icon belongs in HTML"
+            src = image.attrs.get("src")
+            allowed = {"/assets/solvra-icon.png"}
+            if route == "/product/":
+                allowed.add("/assets/solvra-mapvis-synthetic-gathering-hydro.png")
+            assert src in allowed, "Unexpected image in public HTML"
+            if src.endswith("solvra-mapvis-synthetic-gathering-hydro.png"):
+                assert image.attrs.get("width") == "1383" and image.attrs.get("height") == "916"
+                assert image.attrs.get("loading") == "lazy"
             assert all(key in image.attrs for key in ("alt", "width", "height"))
         for script in doc.find("script"):
             assert route == "/" and script.attrs.get("type") == "application/ld+json", "No executable client scripts"
@@ -148,6 +155,13 @@ def check():
         print(f"PASS {route}: metadata, headings, navigation, links, assets, and content guardrails")
     assert len(set(titles)) == len(set(descriptions)) == len(set(headings)) == 4, "Page SEO text must be unique"
     product = documents["/product/"]
+    image_path = "/assets/solvra-mapvis-synthetic-gathering-hydro.png"
+    assert len(product.find("img", src=image_path)) == 1
+    image_link = product.one("a", **{"aria-label": "Open the full-resolution Solvra MapVis screenshot in a new tab"})
+    assert image_link.attrs.get("href") == image_path and image_link.attrs.get("target") == "_blank"
+    assert "noopener" in image_link.attrs.get("rel", "").split()
+    figure = product.one("figure", **{"class": "mapvis-figure"})
+    assert "synthetic West Texas" in figure.text() and "U.S. Geological Survey" in figure.text()
     panel = product.one("div", **{"class": "import-panel"})
     panel_text = normalize(panel.text())
     assert "supported legacy Synergi Gas models" in panel_text

@@ -371,3 +371,11 @@ main:focus { outline: none; }
   html { scroll-behavior: auto; }
   .button { transition: none; }
 }
+
+/* Actual MapVis development preview, shown without cropping. */
+.mapvis-figure { margin: 32px 0; }
+.mapvis-figure a { display: block; border-radius: 5px; }
+.mapvis-figure img { width: 100%; height: auto; border: 1px solid var(--steel); border-radius: 5px; }
+.mapvis-figure figcaption { color: var(--muted); font-size: 13px; line-height: 1.7; margin-top: 12px; }
+.mapvis-figure figcaption strong { color: var(--slate); }
+.mapvis-figure figcaption span { display: inline-block; margin-top: 6px; }
