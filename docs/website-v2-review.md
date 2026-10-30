@@ -83,6 +83,15 @@ installed from the existing allowed development dependency. It checked:
 
 No hosted deployment was needed to validate routing.
 
+A local packaging dry run also passed:
+
+```sh
+npx wrangler deploy --dry-run --outdir .wrangler/v2-build-check
+```
+
+The implementation run redirected Wrangler logs into the ignored local
+`.wrangler` directory. This dry run packages locally and does not deploy.
+
 ### Browser checks
 
 All four pages were checked in the Codex in-app browser at widths
@@ -121,3 +130,20 @@ future owner-controlled checks. There are no arbitrary verification tags.
 
 The specification does not establish commercial readiness; automated tests
 cannot replace engineering validation or the owner's final claims review.
+
+## Remote review check — unresolved
+
+Draft pull request: https://github.com/smziegler-web/solvra-hydraulics-site/pull/1
+
+After the review branch was pushed, the existing Cloudflare integration
+automatically reported a failed `Workers Builds: solvra-hydraulics` check.
+GitHub supplies a dashboard link but no error text or annotations. Opening that
+link in the available browser requires Cloudflare sign-in, so the failure's cause
+is unverified. Do not interpret the passing local checks as a passing hosted build.
+
+The owner should inspect the failed build's logs before approving a merge:
+https://dash.cloudflare.com/2b3869c834eacf8a386f046500fe76e9/workers/services/view/solvra-hydraulics/production/builds/449a9322-c9c5-4c8f-beb0-fe7ac734ee94
+
+No production merge or manual deployment was performed. Remote main was verified
+unchanged at the original production baseline. Hosting configuration was not
+altered to work around the failed check.
